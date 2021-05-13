@@ -6,39 +6,46 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Stats preview card component</title>
-  
+  <title>Frontend Mentor | Profile card component</title>
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <section class="component">
+    <img src="/images/bg-pattern-top.svg" alt="Background pattern top">
+    <img src="/images/bg-pattern-bottom.svg" alt="Background pattern bottom">
+    <div class="card">
+      <header>
+        <img src="/images/bg-pattern-card.svg" alt="Background pattern card">
+      </header>
+      
+      <img src="/images/image-victor.jpg" alt="Profile picture" class="profile-picture">
 
-  <section class="card">
-    <div class="card-info">
-      <h1>Get <span>insights</span> that help your business grow.</h1>
-    
-      <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-      experience, and overall efficiency.</p>
-    
-      <div class="stats">
-        <div class="stat">
-          <h1>10k+</h1>
-          <p>companies</p>
-        </div>
-        <div class="stat">
-          <h1>314</h1>
-          <p>templates</p>
-        </div>
-        <div class="stat">
-          <h1>12M+</h1>
-          <p>queries</p>
-        </div>
+      <div class="personal">
+        <p class="info"><strong>Victor Crest</strong> 26</p>
+        <p class="location">London</p>
       </div>
+
+      <hr>
+
+      <footer>
+        <div class="stat">
+          <h2>80K</h2>
+          <p>Followers</p>
+        </div>
+        <div class="stat">
+          <h2>803K</h2>
+          <p>Likes</p>
+        </div>
+        <div class="stat">
+          <h2>1.4K</h2>
+          <p>Photos</p>
+        </div>
+      </footer>
     </div>
-    <div class="card-image"></div>
   </section>
 </body>
 </html>
