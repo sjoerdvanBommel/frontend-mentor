@@ -114,7 +114,10 @@ h3,
   }
 
   .card-image {
-    background-image: url('images/image-header-desktop.jpg');
+    background-image: linear-gradient(
+      rgba(170, 92, 219, 0.185),
+      rgba(170, 92, 219, 0.185)
+    ), url('images/image-header-desktop.jpg');
     background-position-x: right;
     background-size: auto 100%;
   }
