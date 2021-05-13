@@ -6,6 +6,38 @@
 }
 
 * {
+  margin: 0;
+  padding: 0;
   font-family: 'Kumbh Sans', sans-serif;
   font-size: 18px;
+}
+
+body {
+  height: 100vh;
+}
+
+.component {
+  height: 100%;
+  background-color: var(--dark-cyan);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.component img.bg-top {
+  position: absolute;
+  top: -50%;
+  left: -5%;
+}
+
+.component img.bg-bottom {
+  position: absolute;
+  bottom: -50%;
+  right: -5%;
+}
+
+.card {
+  background-color: white;
+  border-radius: 1em;
+  overflow: hidden;
 }
