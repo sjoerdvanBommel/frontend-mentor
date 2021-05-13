@@ -32,14 +32,20 @@ body {
 
 .component img.bg-top {
   position: absolute;
-  top: -50%;
-  left: -5%;
+  left: -1000px;
+  top: -800px;
+  right: 0;
+  bottom: 0;
+  margin: auto;
 }
 
 .component img.bg-bottom {
   position: absolute;
-  bottom: -50%;
-  right: -5%;
+  right: -1000px;
+  bottom: -1000px;
+  top: 0;
+  left: 0;
+  margin: auto;
 }
 
 .card {
