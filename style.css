@@ -23,17 +23,17 @@ body {
   overflow: hidden;
 }
 
-.cars article {
+.cars section {
   padding: 2em;
   padding-bottom: 6em;
   position: relative;
 }
 
-.cars article img {
+.cars section img {
   display: block;
 }
 
-.cars article header h1 {
+.cars section header h2 {
   color: var(--very-light-gray);
   font-family: 'Big Shoulders Display', cursive;
   font-size: 2em;
@@ -41,12 +41,12 @@ body {
   margin: 1em 0;
 }
 
-.cars article p {
+.cars section p {
   color: var(--transparent-white);
   line-height: 1.625em;
 }
 
-.cars article button {
+.cars section button {
   margin-top: 2em;
   border: 2px solid transparent;
   padding: 0.625em 1em;
@@ -56,7 +56,7 @@ body {
   box-sizing: border-box;
 }
 
-.cars article button:hover {
+.cars section button:hover {
   cursor: pointer;
   border: 2px solid var(--transparent-white);
   color: var(--transparent-white);
