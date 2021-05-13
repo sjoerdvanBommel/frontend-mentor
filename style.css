@@ -12,6 +12,12 @@
   font-size: 18px;
 }
 
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 body {
   height: 100vh;
 }
@@ -40,4 +46,63 @@ body {
   background-color: white;
   border-radius: 1em;
   overflow: hidden;
+  z-index: 1;
+  position: relative;
+}
+
+.card .card-body {
+  margin-top: 5em;
+}
+
+.card .profile-picture {
+  border-radius: 50%;
+  border: 6px solid white;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+.card .personal strong {
+  color: var(--very-dark-desaturated-blue);
+}
+
+.card .personal {
+  text-align: center;
+  color: var(--dark-grayish-blue);
+}
+
+.card .personal .info {
+  margin-bottom: 0.5em;
+}
+
+.card .personal .location {
+  font-size: 0.75em;
+  margin-bottom: 2em;
+}
+
+hr {
+  background-color: rgba(0, 0, 0, 0.1);
+  height: 1px;
+  border: none;
+}
+
+.card footer {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  margin: 2em;
+}
+
+.card footer .stat {
+  flex: 1;
+}
+
+.card footer .stat p {
+  font-size: 0.625em;
+  margin-top: 0.5em;
+  color: var(--dark-gray);
+  letter-spacing: 2px;
 }
