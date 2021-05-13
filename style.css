@@ -1,137 +1,95 @@
 :root {
-  --very-dark-blue: hsl(233, 47%, 7%);
-  --dark-desaturated-blue: hsl(244, 38%, 16%);
-  --soft-violet: rgb(170, 92, 219);
-}
-
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
-
-.attribution a {
-  color: hsl(228, 45%, 44%);
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --transparent-white: hsla(0, 0%, 100%, 0.75);
+  --very-light-gray: hsl(0, 0%, 95%);
 }
 
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Lexend Deca', sans-serif;
+  font-size: 15px;
 }
 
 body {
   min-height: 100vh;
-  background-color: var(--very-dark-blue);
-  margin: 5em 2em;
-  color: #fff;
 }
 
-.card {
-  background-color: var(--dark-desaturated-blue);
-  border-radius: 1em;
+.cars {
+  margin: 4em 2em;
+  border-radius: 8px;
   overflow: hidden;
-  display: flex;
-  flex-direction: column-reverse;
 }
 
-.card div {
-  flex: 1;
+.cars article {
+  padding: 2em;
+  padding-bottom: 6em;
+  position: relative;
 }
 
-h1,
-h3,
-.card-info p {
-  font-family: 'Inter', sans-serif;
-  text-align: center;
+.cars article img {
+  display: block;
 }
 
-.card-info {
-  padding: 1em;
-}
-
-.card-info > h1 {
+.cars article header h1 {
+  color: var(--very-light-gray);
+  font-family: 'Big Shoulders Display', cursive;
   font-size: 2em;
-  margin-bottom: 1em;
-}
-
-.card-info h1 span {
-  color: var(--soft-violet);
-}
-
-.card-info > p {
-  font-size: 0.9em;
-  line-height: 1.7em;
-  color: #aaa;
-  margin-bottom: 2em;
-}
-
-.stats {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-}
-
-.stats h1 {
-  font-size: 1.5em;
-  margin-bottom: 0.2em;
-}
-
-.stats p {
-  color: #aaa;
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 0.8em;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  margin: 1em 0;
 }
 
-.stat {
-  margin-bottom: 2em;
+.cars article p {
+  color: var(--transparent-white);
+  line-height: 1.625em;
 }
 
-.card-image {
-  background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
-    ),
-    url('images/image-header-mobile.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 300px;
-  background-size: 100% auto;
-  background-position: center top;
+.cars article button {
+  margin-top: 2em;
+  border: 2px solid transparent;
+  padding: 0.625em 1em;
+  border-radius: 2em;
+  position: absolute;
+  bottom: 2em;
+  box-sizing: border-box;
 }
 
-@media screen and (min-width: 900px) {
-  .card-info {
-    padding: 3em 5em;
-  }
+.cars article button:hover {
+  cursor: pointer;
+  border: 2px solid var(--transparent-white);
+  color: var(--transparent-white);
+  background-color: transparent;
+}
 
-  body {
+.sedan {
+  background-color: var(--bright-orange);
+}
+
+.sedan button {
+  color: var(--bright-orange);
+}
+
+.suvs {
+  background-color: var(--dark-cyan);
+}
+
+.suvs button {
+  color: var(--dark-cyan);
+}
+
+.luxury {
+  background-color: var(--very-dark-cyan);
+}
+
+.luxury button {
+  color: var(--very-dark-cyan);
+}
+
+@media screen and (min-width: 800px) {
+  .cars {
     margin: 10em;
-  }
-
-  .card {
-    flex-direction: row;
-  }
-
-  .card-image {
-    background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
-    ), url('images/image-header-desktop.jpg');
-    background-position-x: right;
-    background-size: auto 100%;
-  }
-
-  .card-info > h1 {
-    text-align: left;
-  }
-
-  .card-info > p {
-    text-align: left;
-    margin-bottom: 4em;
-  }
-
-  .stats {
-    flex-direction: row;
+    display: flex;
   }
 }
