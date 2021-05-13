@@ -48,7 +48,7 @@ h3,
   padding: 1em;
 }
 
-.card-info > h1 {
+.card-info h1 {
   font-size: 2em;
   margin-bottom: 1em;
 }
@@ -57,7 +57,7 @@ h3,
   color: var(--soft-violet);
 }
 
-.card-info > p {
+.card-info p {
   font-size: 0.9em;
   line-height: 1.7em;
   color: #aaa;
@@ -89,20 +89,19 @@ h3,
 
 .card-image {
   background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
+      hsl(277, 64%, 61%, 0.6),
+      hsl(277, 64%, 61%, 0.6)
     ),
     url('images/image-header-mobile.jpg');
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   min-height: 300px;
-  background-size: 100% auto;
   background-position: center top;
 }
 
 @media screen and (min-width: 900px) {
   .card-info {
-    padding: 3em 5em;
+    padding: 0;
   }
 
   body {
@@ -115,18 +114,23 @@ h3,
 
   .card-image {
     background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
-    ), url('images/image-header-desktop.jpg');
-    background-position-x: right;
-    background-size: auto 100%;
+        hsl(277, 64%, 61%, 0.6),
+        hsl(277, 64%, 61%, 0.6)
+      ),
+      url(images/image-header-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
-  .card-info > h1 {
+  .card-info h1 {
     text-align: left;
   }
 
-  .card-info > p {
+  .card-info .content {
+    margin: 3em 5em;
+  }
+
+  .card-info p {
     text-align: left;
     margin-bottom: 4em;
   }
