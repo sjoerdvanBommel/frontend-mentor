@@ -1,137 +1,110 @@
 :root {
-  --very-dark-blue: hsl(233, 47%, 7%);
-  --dark-desaturated-blue: hsl(244, 38%, 16%);
-  --soft-violet: rgb(170, 92, 219);
-}
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
 
-.attribution {
-  font-size: 11px;
-  text-align: center;
-}
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
 
-.attribution a {
-  color: hsl(228, 45%, 44%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
 }
 
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  font-family: 'Kumbh Sans', sans-serif;
 }
 
 body {
-  min-height: 100vh;
-  background-color: var(--very-dark-blue);
-  margin: 5em 2em;
-  color: #fff;
+  height: 100vh;
+  background-image: linear-gradient(var(--soft-violet), var(--soft-blue));
+  margin: 10em 2em;
 }
 
-.card {
-  background-color: var(--dark-desaturated-blue);
-  border-radius: 1em;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column-reverse;
+.component {
+  background-color: white;
+  border-radius: 20px;
+  padding: 0 2em 2em 2em;
 }
 
-.card div {
-  flex: 1;
-}
-
-h1,
-h3,
-.card-info p {
-  font-family: 'Inter', sans-serif;
+.component .faq {
   text-align: center;
+  padding-top: 150px;
 }
 
-.card-info {
-  padding: 1em;
-}
-
-.card-info > h1 {
-  font-size: 2em;
+.component .faq header {
+  font-size: 1.5em;
+  color: var(very-dark-grayish-blue);
   margin-bottom: 1em;
 }
 
-.card-info h1 span {
-  color: var(--soft-violet);
+.component .faq .accordion .accordion-item {
+  padding: 1em 0;
+  border-bottom: 1px solid var(--light-grayish-blue);
 }
 
-.card-info > p {
-  font-size: 0.9em;
-  line-height: 1.7em;
-  color: #aaa;
-  margin-bottom: 2em;
+.component .faq .accordion .accordion-item .question {
+  font-size: 1em;
+  font-weight: normal;
+  text-align: left;
+  align-content: right;
+  position: relative;
+  user-select: none;
 }
 
-.stats {
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
+.component .faq .accordion .accordion-item.open .question {
+  font-weight: bold;
 }
 
-.stats h1 {
-  font-size: 1.5em;
-  margin-bottom: 0.2em;
+.component .faq .accordion .accordion-item .question:hover {
+  cursor: pointer;
 }
 
-.stats p {
-  color: #aaa;
-  font-family: 'Lexend Deca', sans-serif;
-  font-size: 0.8em;
-  text-transform: uppercase;
-  letter-spacing: 0.1em;
+.component .faq .accordion .accordion-item .question::after {
+  content: url('./images/icon-arrow-down.svg');
+  position: absolute;
+  right: 0;
 }
 
-.stat {
-  margin-bottom: 2em;
+.component .faq .accordion .accordion-item.open .question::after {
+  transform: rotate(180deg);
 }
 
-.card-image {
-  background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
-    ),
-    url('images/image-header-mobile.jpg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  min-height: 300px;
-  background-size: 100% auto;
-  background-position: center top;
+.component .faq .accordion .accordion-item .answer {
+  margin-top: 1em;
+  text-align: left;
+  font-size: 0.875em;
+  line-height: 1.5em;
+  color: var(--dark-grayish-blue);
 }
 
-@media screen and (min-width: 900px) {
-  .card-info {
-    padding: 3em 5em;
+.component .faq .accordion .accordion-item:not(.open) .answer {
+  display: none;
+}
+
+.component .images img {
+  position: absolute;
+  margin: 0 auto;
+  right: 0;
+  left: 0;
+}
+
+.component .images .woman {
+  transform: translateY(calc(-50% - 10px));
+}
+
+.component .images .background {
+  transform: translateX(13px);
+}
+
+@media screen and (min-width: 800px) {
+  .component {
+    display: flex;
+    flex-direction: row-reverse;
   }
 
-  body {
-    margin: 10em;
-  }
-
-  .card {
-    flex-direction: row;
-  }
-
-  .card-image {
-    background-image: linear-gradient(
-      rgba(170, 92, 219, 0.185),
-      rgba(170, 92, 219, 0.185)
-    ), url('images/image-header-desktop.jpg');
-    background-position-x: right;
-    background-size: auto 100%;
-  }
-
-  .card-info > h1 {
+  .component .faq {
+    padding: 5em 5em 5em 0;
     text-align: left;
-  }
-
-  .card-info > p {
-    text-align: left;
-    margin-bottom: 4em;
-  }
-
-  .stats {
-    flex-direction: row;
   }
 }

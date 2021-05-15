@@ -6,39 +6,70 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
-  <title>Frontend Mentor | Stats preview card component</title>
-  
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
   <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+
+  <script async src="script.js"></script>
 </head>
 <body>
-
-  <section class="card">
-    <div class="card-info">
-      <h1>Get <span>insights</span> that help your business grow.</h1>
-    
-      <p>Discover the benefits of data analytics and make better decisions regarding revenue, customer 
-      experience, and overall efficiency.</p>
-    
-      <div class="stats">
-        <div class="stat">
-          <h1>10k+</h1>
-          <p>companies</p>
+  <div class="component">
+    <div class="images">
+      <img src="./images/illustration-woman-online-mobile.svg" alt="Woman online mobile" class="woman">
+      <img src="./images/bg-pattern-mobile.svg" alt="Background pattern" class="background">
+    </div>
+    <section class="faq">
+      <header>
+        <h2>FAQ</h2>
+      </header>
+      <div class="accordion">
+        <div class="accordion-item">
+          <h2 class="question">
+            How many team members can I invite?
+          </h2>
+          <p class="answer">
+            You can invite up to 2 additional users on the Free plan. There is no limit on 
+            team members for the Premium plan.
+          </p>
         </div>
-        <div class="stat">
-          <h1>314</h1>
-          <p>templates</p>
+        <div class="accordion-item">
+          <h2 class="question">
+            What is the maximum file upload size?
+          </h2>
+          <p class="answer">
+            No more than 2GB. All files in your account must fit your allotted storage space.
+          </p>
         </div>
-        <div class="stat">
-          <h1>12M+</h1>
-          <p>queries</p>
+        <div class="accordion-item">
+          <h2 class="question">
+            How do I reset my password?
+          </h2>
+          <p class="answer">
+            Click “Forgot password” from the login page or “Change password” from your profile page.
+            A reset link will be emailed to you.
+          </p>
+        </div>
+        <div class="accordion-item">
+          <h2 class="question">
+            Can I cancel my subscription?
+          </h2>
+          <p class="answer">
+            Yes! Send us a message and we’ll process your request no questions asked.
+          </p>
+        </div>
+        <div class="accordion-item">
+          <h2 class="question">
+            Do you provide additional support?
+          </h2>
+          <p class="answer">
+            Chat and email support is available 24/7. Phone lines are open during normal business hours.  
+          </p>
         </div>
       </div>
-    </div>
-    <div class="card-image"></div>
-  </section>
+    </section>
+  </div>
 </body>
 </html>
