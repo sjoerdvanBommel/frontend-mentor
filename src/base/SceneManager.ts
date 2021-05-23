@@ -6,7 +6,6 @@ import ISceneManager from './ISceneManager';
 
 class SceneManager implements ISceneManager {
     clock: Clock = new Clock();
-
     camera: PerspectiveCamera;
     scene: Scene;
     renderer: WebGLRenderer;
