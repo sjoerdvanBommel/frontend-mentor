@@ -5,12 +5,11 @@ pool:
   vmImage: ubuntu-latest
 
 steps:
-  - task: Npm@1
-    inputs:
-      command: 'install'
-
-  - task: AzureStaticWebApp@0
-    inputs:
-      app_location: '/'
-    env:
-      azure_static_web_apps_api_token: $(deployment_token)
+- task: AzureFunctionApp@1
+  inputs:
+    azureSubscription: 'Pay-As-You-Go(1)(27926aee-9af8-4228-8602-054d257c26fd)'
+    appType: 'functionAppLinux'
+    appName: 'sjoerds-portfolio'
+    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    runtimeStack: 'NODE|14'
+    startUpCommand: 'npm run build'
