@@ -1,4 +1,4 @@
-import { SpotLight, Scene, SpotLightHelper } from 'three';
+import { SpotLight, Scene } from 'three';
 
 export default class MainLight implements ISceneObject {
     spotlight: SpotLight;

@@ -4,8 +4,8 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader';
 export default class Avatar implements ISceneObject {
     isLoaded: boolean = false;
     loader: GLTFLoader;
-    avatar: Object3D;
-    mixer: AnimationMixer;
+    avatar?: Object3D;
+    mixer?: AnimationMixer;
     
     constructor(scene: Scene) {
         this.loader = new GLTFLoader();
@@ -33,7 +33,7 @@ export default class Avatar implements ISceneObject {
 
     update(time: number): void {
         if (this.isLoaded) {
-            if (this.mixer !== null) {
+            if (this.mixer instanceof AnimationMixer) {
                 this.mixer.update(time);
             };
         }
