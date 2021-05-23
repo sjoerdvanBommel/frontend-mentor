@@ -1,3 +1,4 @@
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { Clock, Scene, PerspectiveCamera, WebGLRenderer } from 'three';
 import Avatar from '../avatar/Avatar';
 import MainLight from '../lights/MainLight';
@@ -16,6 +17,8 @@ class SceneManager implements ISceneManager {
 		this.camera = this.buildCamera(canvas);
 		this.renderer = this.buildRenderer(canvas);
         this.sceneObjects = this.buildSceneObjects(this.scene);
+        
+		new OrbitControls( this.camera, this.renderer.domElement );
     }
 
 	buildCamera({ width, height }: { width: number, height: number }): PerspectiveCamera {
