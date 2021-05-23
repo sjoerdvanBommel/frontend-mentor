@@ -1,0 +1,17 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+
+- task: Npm@1
+  inputs:
+    command: 'install'
+
+- task: AzureStaticWebApp@0
+  inputs:
+    app_location: '/'
+  env:
+    azure_static_web_apps_api_token: $(deployment_token)
