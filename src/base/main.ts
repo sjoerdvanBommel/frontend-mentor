@@ -1,3 +1,4 @@
+import ISceneManager from './ISceneManager';
 import SceneManager from './SceneManager';
 
 class Main {

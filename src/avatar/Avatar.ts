@@ -7,8 +7,8 @@ export default class Avatar implements ISceneObject {
     avatar?: Object3D;
     mixer?: AnimationMixer;
     
-    constructor(scene: Scene) {
-        this.loader = new GLTFLoader();
+    constructor(scene: Scene, loader?: GLTFLoader) {
+        this.loader = loader ?? new GLTFLoader();
         
 		this.loader.load('./../../models/avatar.glb', (glft) => {
 			scene.add(glft.scene);
