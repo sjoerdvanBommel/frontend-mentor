@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "outDir": "./dist",
+        "allowJs": true,
+        "moduleResolution": "node",
+        "target": "es2015",
+        "sourceMap": true,
+        "esModuleInterop": true
+    },
+    "include": [
+        "src/**/*"
+    ],
+    "exclude": ["node_modules", "**/*.test.ts"]
+}
