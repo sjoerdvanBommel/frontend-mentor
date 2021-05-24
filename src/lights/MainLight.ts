@@ -2,6 +2,8 @@ import { SpotLight, Scene } from 'three';
 
 export default class MainLight implements ISceneObject {
     spotlight: SpotLight;
+    possibleStatesWithActions: Map<number, (time: number) => void> = new Map();
+    activeStates: Set<number> = new Set();
     
     constructor(scene: Scene) {
         this.spotlight = new SpotLight( 0xffffff );
@@ -18,11 +20,8 @@ export default class MainLight implements ISceneObject {
 
         scene.add(this.spotlight);
     }
-    activeStates: Set<number> = new Set();
 
     update(time: number): void {
         // No updates, just a light
     }
-
-    statesWithActions: IStateAction[] = [];
 }

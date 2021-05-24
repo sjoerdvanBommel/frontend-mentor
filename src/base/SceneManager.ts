@@ -52,7 +52,7 @@ class SceneManager implements ISceneManager {
     
         for (let i = 0; i < this.sceneObjects.length; i++) {
         	this.sceneObjects[i].update(delta);
-        	this.sceneObjects[i].activeStates.forEach(x => this.sceneObjects[i].statesWithActions[x][x](delta));
+        	this.sceneObjects[i].activeStates.forEach(x => this.sceneObjects[i].possibleStatesWithActions.get(x)?.(delta));
         }
 
         this.renderer.render(this.scene, this.camera);

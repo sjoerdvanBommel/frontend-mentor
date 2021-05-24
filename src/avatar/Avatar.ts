@@ -5,7 +5,7 @@ export default class Avatar implements IInteractiveSceneObject {
     loader: GLTFLoader;
     avatar: Object3D = new Object3D();
     mixer: AnimationMixer = new AnimationMixer(this.avatar);
-    activeStates: Set<State> = new Set([State.Idle]);
+    activeStates: Set<AvatarState> = new Set([AvatarState.Idle]);
     
     constructor(scene: Scene, loader?: GLTFLoader) {
         this.loader = loader ?? new GLTFLoader();
@@ -37,16 +37,16 @@ export default class Avatar implements IInteractiveSceneObject {
         if (this.avatar instanceof Object3D) {
             switch(e.key) {
                 case "ArrowUp":
-                    this.addState(State.Walking);
+                    this.addState(AvatarState.Walking);
                     break;
                 case "ArrowDown":
-                    this.addState(State.WalkingBackwards)
+                    this.addState(AvatarState.WalkingBackwards)
                     break;
                 case "ArrowLeft":
-                    this.addState(State.TurningLeft);
+                    this.addState(AvatarState.TurningLeft);
                     break;
                 case "ArrowRight":
-                    this.addState(State.TurningRight);
+                    this.addState(AvatarState.TurningRight);
                     break;
             }
         }
@@ -56,42 +56,42 @@ export default class Avatar implements IInteractiveSceneObject {
         if (this.avatar instanceof Object3D) {
             switch(e.key) {
                 case "ArrowUp":
-                    this.deleteState(State.Walking);
+                    this.deleteState(AvatarState.Walking);
                     break;
                 case "ArrowDown":
-                    this.deleteState(State.WalkingBackwards);
+                    this.deleteState(AvatarState.WalkingBackwards);
                     break;
                 case "ArrowLeft":
-                    this.deleteState(State.TurningLeft);
+                    this.deleteState(AvatarState.TurningLeft);
                     break;
                 case "ArrowRight":
-                    this.deleteState(State.TurningRight);
+                    this.deleteState(AvatarState.TurningRight);
                     break;
             }
         }
     }
 
-    addState(state: State): void {
-        this.activeStates.delete(State.Idle);
+    addState(state: AvatarState): void {
+        this.activeStates.delete(AvatarState.Idle);
         this.activeStates.add(state);
     }
 
-    deleteState(state: State): void {
+    deleteState(state: AvatarState): void {
         this.activeStates.delete(state);
         if (this.activeStates.size === 0) {
-            this.addState(State.Idle);
+            this.addState(AvatarState.Idle);
         }
     }
 
-    statesWithActions: IStateAction[] = [
-        { [State.Idle]: () => {} },
-        { [State.Walking]: (time: number) => this.avatar.translateZ(time * 2) },
-        { [State.WalkingBackwards]: (time: number) => this.avatar.translateZ(-time * 2) },
-        { [State.TurningLeft]: (time: number) => this.avatar.rotateY(time * 3) },
-        { [State.TurningRight]: (time: number) => this.avatar.rotateY(time * -3) },
-    ];
+    possibleStatesWithActions: Map<number, (time: number) => void> = new Map([
+        [AvatarState.Idle, (_) => {}],
+        [AvatarState.Walking, (time: number) => this.avatar.translateZ(time * 2)],
+        [AvatarState.WalkingBackwards, (time: number) => this.avatar.translateZ(time * -2)],
+        [AvatarState.TurningLeft, (time: number) => this.avatar.rotateY(time * 3)],
+        [AvatarState.TurningRight, (time: number) => this.avatar.rotateY(time * -3)],
+    ]);
 }
 
-enum State {
+enum AvatarState {
     Idle, Walking, WalkingBackwards, TurningLeft, TurningRight, Running
 }
