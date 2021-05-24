@@ -7,6 +7,7 @@
   "scripts": {
     "start": "snowpack dev",
     "build": "snowpack build",
+    "start:prd": "http-server ./build -p 80",
     "test": "jest",
     "test-watch": "jest --watch",
     "test-coverage": "jest --collect-coverage"
@@ -15,6 +16,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/three": "^0.128.0",
+    "http-server": "^0.12.3",
     "three": "^0.128.0"
   },
   "devDependencies": {
