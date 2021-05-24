@@ -52,6 +52,7 @@ class SceneManager implements ISceneManager {
     
         for (let i = 0; i < this.sceneObjects.length; i++) {
         	this.sceneObjects[i].update(delta);
+        	this.sceneObjects[i].activeStates.forEach(x => this.sceneObjects[i].statesWithActions[x][x](delta));
         }
 
         this.renderer.render(this.scene, this.camera);
@@ -62,6 +63,22 @@ class SceneManager implements ISceneManager {
         this.camera.updateProjectionMatrix();
         
         this.renderer.setSize(width, height);
+    }
+
+    onKeyDown(e: KeyboardEvent): void {
+        this.getInteractiveSceneObjects().forEach(x => x.onKeyDown(e));
+    }
+
+    onKeyUp(e: KeyboardEvent): void {
+        this.getInteractiveSceneObjects().forEach(x => x.onKeyUp(e));
+    }
+
+    getInteractiveSceneObjects(): IInteractiveSceneObject[] {
+        return this.sceneObjects.filter(x => this.isInteractiveSceneObject(x)).map(x => x as IInteractiveSceneObject);
+    }
+
+    isInteractiveSceneObject(object: ISceneObject): object is IInteractiveSceneObject {
+        return 'onKeyDown' in object && 'onKeyUp' in object;
     }
 }
 

@@ -18,8 +18,11 @@ export default class MainLight implements ISceneObject {
 
         scene.add(this.spotlight);
     }
+    activeStates: Set<number> = new Set();
 
     update(time: number): void {
         // No updates, just a light
     }
+
+    statesWithActions: IStateAction[] = [];
 }

@@ -15,6 +15,8 @@ class Main {
 
     bindEventListeners(): void {
         window.onresize = () => this.resizeCanvas();
+        window.onkeydown = (e: KeyboardEvent) => this.sceneManager.onKeyDown(e);
+        window.onkeyup = (e: KeyboardEvent) => this.sceneManager.onKeyUp(e);
         this.resizeCanvas();	
     }
 
