@@ -1,9 +1,6 @@
 trigger:
   - master
 
-pool:
-  vmImage: ubuntu-latest
-
 steps:
 - task: AzureFunctionApp@1
   inputs:
